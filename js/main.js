@@ -11,32 +11,27 @@ var currentISBN = '0136083250';
 
 isbnButton.addEventListener('click', function() {
     
-
-    
     let userIsbnValue = document.getElementById('isbnText').value;
-    
     
     // check if the value is a number
     let isbnLength = userIsbnValue.length;
   
-    
     if (isbnLength === 10 || isbnLength === 13) {
       
         let numericIsbn = parseInt(userIsbnValue);
         
         currentISBN = numericIsbn;
+        // when user enters new isbn the book is rerendered
+        initialize();
         
-
     }
     // send isbn value to API 
     // if invalid value is entered request new isbn value 
-    
 });
 
 pageFlipTime.addEventListener('click', function() {
     
 });
-
 
 
 /// API CALLS /// 
