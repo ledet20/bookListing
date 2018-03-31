@@ -19,7 +19,12 @@ h1 {
 }
 
 #viewerCanvas {
-    width: 80%;
-    height: 60%;
+    width: 90%;
+    height: 80%;
     margin: auto;
 }
+
+input {
+    font-size: 20px;
+}
+

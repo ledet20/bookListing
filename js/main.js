@@ -11,7 +11,7 @@ google.books.load();
      
   function initialize() {
         var viewer = new google.books.DefaultViewer(document.getElementById('viewerCanvas'));
-        viewer.load('ISBN:0679603859', bookFailedToLoad, bookHasLoaded);
+        viewer.load('ISBN:0738531367', bookFailedToLoad, bookHasLoaded);
       }
 
       google.books.setOnLoadCallback(initialize);
