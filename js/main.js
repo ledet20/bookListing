@@ -5,25 +5,32 @@ let pageFlipTime = document.getElementById('pageFlipTime');
 
 let userIsbnValue = document.getElementById('isbnText').value;
 
-let currentISBN = '0738531367';
+var currentISBN = '0136083250';
 
 
 
 isbnButton.addEventListener('click', function() {
     
-    let userIsbnValue = document.getElementById('isbnText').value
+
     
-    let numericIsbn = parseInt(userIsbnValue);
+    let userIsbnValue = document.getElementById('isbnText').value;
+    
     
     // check if the value is a number
-    // get the length of the string and ensure it is isbn possible 
+    let isbnLength = userIsbnValue.length;
+  
+    
+    if (isbnLength === 10 || isbnLength === 13) {
+      
+        let numericIsbn = parseInt(userIsbnValue);
+        
+        currentISBN = numericIsbn;
+        
+
+    }
     // send isbn value to API 
     // if invalid value is entered request new isbn value 
-    alert(numericIsbn);
     
-  //  if (numericIsbn)
-    
-//    alert(userIsbnValue);
 });
 
 pageFlipTime.addEventListener('click', function() {
@@ -34,8 +41,8 @@ pageFlipTime.addEventListener('click', function() {
 
 /// API CALLS /// 
 
-google.books.load();
-     
+google.books.load();  
+
   function bookFailedToLoad() {
       alert("we can not load that book!");
   }
@@ -43,10 +50,16 @@ google.books.load();
   function bookHasLoaded() {
       console.log("The book has loaded successfully!");
   }
-     
+    
+  function loadViewer(isbnVal) {
+      return `ISBN:${isbnVal}`;
+  }
+
   function initialize() {
         var viewer = new google.books.DefaultViewer(document.getElementById('viewerCanvas'));
-        viewer.load(`ISBN:${currentISBN}`, bookFailedToLoad, bookHasLoaded);
+        viewer.load(loadViewer(currentISBN), bookFailedToLoad, bookHasLoaded);
+        alert(currentISBN);
       }
 
       google.books.setOnLoadCallback(initialize);
+      
