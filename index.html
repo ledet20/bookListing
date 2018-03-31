@@ -14,16 +14,16 @@
                 <h1> CURRENT BOOK LISTING</h1>
             </div>
                 <form>
-                Search by ISBN: <input type="text" name="ISBN" > 
-                    <input class="imputValue" accept=""type="button" name="FIND" value="FIND">
+                Search by ISBN: <input id="isbnText" type="text" name="ISBN" > 
+                    <input  id="isbnButton" class="imputValue" type="button" name="FIND" value="FIND">
                     <br>
                 Set auto page flip: <input class="imputValue" type="text" name="autoPageFlipTime" > 
-                    <input type="button" name="FIND" value="SET TIME" >
+                    <input  id="pageFlipTime" type="button" name="FIND" value="SET TIME" >
               </form>
 
             <div id="viewerCanvas" ></div>
             
-            <p id="currentPage"> current page </p>
+            <p id="currentPage"> current page  <span></span></p>
         </body>
          <script type="text/javascript" src="https://www.google.com/books/jsapi.js"></script>
         <script src="js/main.js" type="text/javascript" ></script>
