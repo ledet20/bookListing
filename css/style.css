@@ -20,11 +20,26 @@ h1 {
 
 #viewerCanvas {
     width: 90%;
-    height: 80%;
+    height: 1000px;
     margin: auto;
+    margin-top: 10%;
 }
 
 input {
-    font-size: 20px;
+    font-size: 15px;
 }
 
+
+form {
+    font-size: 30px;
+    font-family: monospace;
+    font-weight: 100;
+    
+}
+
+#currentPage {
+    font-size: 30px;
+    text-align: center;
+    margin-top: 10%;
+    margin-bottom: 5%;
+}
