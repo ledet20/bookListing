@@ -15,6 +15,10 @@ isbnButton.addEventListener('click', function() {
     
     let numericIsbn = parseInt(userIsbnValue);
     
+    // check if the value is a number
+    // get the length of the string and ensure it is isbn possible 
+    // send isbn value to API 
+    // if invalid value is entered request new isbn value 
     alert(numericIsbn);
     
   //  if (numericIsbn)
