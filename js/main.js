@@ -10,6 +10,7 @@ var currentISBN = '0136083250';
 // isbn test code 1477218491
 
 
+// click listener for isbn button
 isbnButton.addEventListener('click', function() {
     
     let isbnErrorMessage = document.getElementById('errorMessage');
@@ -40,10 +41,18 @@ isbnButton.addEventListener('click', function() {
     // if invalid value is entered request new isbn value 
 });
 
-pageFlipTime.addEventListener('click', function() {
+// function that retrrns users time value and gets input value
+function getUserTime() {
+    let userTimeValue = document.getElementById("autoPageText").value;
+    let numericTime = parseInt(userTimeValue);
     
-});
+    alert(numericTime);
+  
+    return numericTime;
+}
 
+// click listener for page flip button 
+pageFlipTime.addEventListener('click', getUserTime);
 
 /// API CALLS /// 
 
@@ -61,9 +70,20 @@ google.books.load();
       return `ISBN:${isbnVal}`;
   }
 
+let userTime = getUserTime();
+
+  function nextPage(viewer) {
+        window.setTimeout(function() {
+            viewer.nextPage();
+            nextPage(viewer);
+        }, userTime); 
+      alert(userTime);
+    }
+
   function initialize() {
         var viewer = new google.books.DefaultViewer(document.getElementById('viewerCanvas'));
         viewer.load(loadViewer(currentISBN), bookFailedToLoad, bookHasLoaded);
+        nextPage(viewer);
       }
 
       google.books.setOnLoadCallback(initialize);
