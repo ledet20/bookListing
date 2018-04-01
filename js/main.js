@@ -5,11 +5,16 @@ let pageFlipTime = document.getElementById('pageFlipTime');
 
 let isbnInputField = document.getElementById('isbnText');
 
+// API will initially be rendered with this isbn
 var currentISBN = '0136083250';
 
 
 
 isbnButton.addEventListener('click', function() {
+    
+    let isbnErrorMessage = document.getElementById('errorMessage');
+    
+    isbnErrorMessage.classList.remove('isbnErrorMessage')
     
     let userIsbnValue = document.getElementById('isbnText').value;
     
@@ -27,6 +32,7 @@ isbnButton.addEventListener('click', function() {
     } else {
         userIsbnValue = document.getElementById('isbnText').value = "";
         isbnInputField.classList.add('invalidValue');
+        isbnErrorMessage.classList.add('isbnErrorMessage');
     }
     
     // if invalid value is entered request new isbn value 
