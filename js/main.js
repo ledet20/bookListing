@@ -7,7 +7,7 @@ let isbnInputField = document.getElementById('isbnText');
 
 // API will initially be rendered with this isbn
 var currentISBN = '0136083250';
-
+// isbn test code 1477218491
 
 
 isbnButton.addEventListener('click', function() {
@@ -33,8 +33,10 @@ isbnButton.addEventListener('click', function() {
         userIsbnValue = document.getElementById('isbnText').value = "";
         isbnInputField.classList.add('invalidValue');
         isbnErrorMessage.classList.add('isbnErrorMessage');
+        
     }
     
+    // isbnInputField.classList.remove('invalidValue');
     // if invalid value is entered request new isbn value 
 });
 
@@ -62,7 +64,6 @@ google.books.load();
   function initialize() {
         var viewer = new google.books.DefaultViewer(document.getElementById('viewerCanvas'));
         viewer.load(loadViewer(currentISBN), bookFailedToLoad, bookHasLoaded);
-        alert(currentISBN);
       }
 
       google.books.setOnLoadCallback(initialize);

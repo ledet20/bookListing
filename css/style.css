@@ -53,7 +53,7 @@ form {
 
 .invalidValue {
     
-    -webkit-animation: shake .5s linear;
+    -webkit-animation: shake .6s linear;
 }
 
 @-webkit-keyframes shake {
