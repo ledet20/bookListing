@@ -3,7 +3,7 @@ let isbnButton = document.getElementById("isbnButton");
 
 let pageFlipTime = document.getElementById('pageFlipTime');
 
-let userIsbnValue = document.getElementById('isbnText').value;
+let isbnInputField = document.getElementById('isbnText');
 
 var currentISBN = '0136083250';
 
@@ -24,8 +24,11 @@ isbnButton.addEventListener('click', function() {
         // when user enters new isbn the book is rerendered
         initialize();
         
+    } else {
+        userIsbnValue = document.getElementById('isbnText').value = "";
+        isbnInputField.classList.add('invalidValue');
     }
-    // send isbn value to API 
+    
     // if invalid value is entered request new isbn value 
 });
 
